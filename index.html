@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jun Bendijo</title>
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//malihu.github.io/custom-scrollbar/jquery.mCustomScrollbar.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="//malihu.github.io/custom-scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="resume.css">
+    <link rel="stylesheet" href="mobilestyle.css">`
+    <script src="http://code.jquery.com/color/jquery.color-2.1.2.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
+</head>
+<body>
+    <!--netlify deploy --prod-->
+    <!-- cursor elements -->
+    <div class="cursor cursor--outer"></div>
+    <div class="cursor cursor--inner"></div>
+    <div class="main-container">
+        <div class="content">
+            <!-- <div class="navbar">
+                <div class="box-container">
+                    <div class="box"></div>
+                </div>
+                <div class="list">
+                    <ul class="navsidemenu">
+                        <li><i id="resume" class='fas fa-briefcase'></i></li>
+                        <li><i id="aboutme" class='far fa-user'></i></li>
+                        <li><i id="contact" class='fa fa-phone'></i></li>
+                    </ul>
+                </div>
+                <div class="downloadlink">
+                    <i class='fas fa-cloud-download-alt'></i>
+                </div>
+            </div> -->
+            <div class="myphoto">
+                <div class="photo">
+                    <div class="my-info">
+                        <div class="my-name">
+                            <h2>ALEJANDRO V. BENDIJO JR.</h2>
+                        </div>
+                        <div class="my-position">
+                            <span>SOFTWARE DEVELOPER / WEB DEVELOPER</span>
+                        </div>
+                        <div class="my-social-list">
+                            <ul>
+                                <li><a href="https://www.facebook.com/Junbendinwho" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                                 <li><a href="https://www.messenger.com/t/Junbendinwho" target="_blank"><i class="fab fa-facebook-messenger"></i></a></li>
+                                <li><a href="http://linkedin.com/in/alejandrobendijo" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="right-content">
+            <div class="navbar">
+                <div class="box-container">
+                    <div class="box"></div>
+                </div>
+                <div class="list">
+                    <div class="circlediv"></div>
+                    <ul class="navsidemenu">
+                        <li class="link1"><i id="resume" class='fas fa-briefcase'></i></li>
+                        <li class="link2"><i id="aboutme" class='far fa-user'></i></li>
+                        <li class="link3"><i id="contact" class='fa fa-phone'></i></li>
+                    </ul>
+                </div>
+                <div class="downloadlink">
+                    <a href="/myresume/BendijoAlejandroJrVResume.pdf" download> <i class='fas fa-cloud-download-alt'></i></a>
+                    <!-- <i class='fas fa-cloud-download-alt'></i> -->
+                </div>
+            </div>
+            <div class="text-content">
+                <div class="text-container">
+                    <div class="resume-container">
+                        <h1 class="resume-header">resume</h1>
+                        <h2 class="resume-subheader">2 years professional experience <span>/</span> 6 years in coding <span>/</span>  Bachelor's Degree</h2>
+                        <p class="resume-obj">To work in a professional environment and gain more knowledge about 
+                            web development and software development to create superior applications, websites 
+                            and other core systems that will be useful to the end-users</p>
+                        <div class="line-container"></div>
+                        <div class="subheader">
+                        <i class="fa fa-cogs"></i>
+                        <h3>skills</h3>
+                        </div>
+                        <div class="skillset">
+                            <div class="skill-container">
+                                <div class="skill-text">
+                                    <h4 class="skillTittle">HTML</h4>
+                                    <h4 id="htmlPercent" class="percentage">0%</h4>
+                                </div>
+                                <div class="barbackground">
+                                    <div id="htmlBar" class="myBar"></div>                                 
+                                </div>
+                            </div>
+                            <div class="skill-container">
+                                <div class="skill-text">
+                                    <h4 class="skillTittle">CSS</h4>
+                                    <h4 id="cssPercent" class="percentage">0%</h4>
+                                </div>
+                                <div class="barbackground">
+                                    <div id="cssBar" class="myBar"></div>                                 
+                                </div>
+                            </div>
+                            <div class="skill-container">
+                                <div class="skill-text">
+                                    <h4 class="skillTittle">ASP.NET</h4>
+                                    <h4 id="aspPercent" class="percentage">0%</h4>
+                                </div>
+                                <div class="barbackground">
+                                    <div id="aspBar" class="myBar"></div>                                 
+                                </div>
+                            </div>
+                            <div class="skill-container">
+                                <div class="skill-text">
+                                    <h4 class="skillTittle">VB.NET</h4>
+                                    <h4 id="vbPercent" class="percentage">0%</h4>
+                                </div>
+                                <div class="barbackground">
+                                    <div id="vbBar" class="myBar"></div>                                 
+                                </div>
+                            </div>
+                            <div class="skill-container">
+                                <div class="skill-text">
+                                    <h4 class="skillTittle">C#</h4>
+                                    <h4 id="c#Percent" class="percentage">0%</h4>
+                                </div>
+                                <div class="barbackground">
+                                    <div id="c#Bar" class="myBar"></div>                                 
+                                </div>
+                            </div>
+                            <div class="skill-container">
+                                <div class="skill-text">
+                                    <h4 class="skillTittle">SQL<span>( MSSQL, MySQL )</h4>
+                                    <h4 id="mssqlPercent" class="percentage">0%</h4>
+                                </div>
+                                <div class="barbackground">
+                                    <div id="mssqlBar" class="myBar"></div>                                 
+                                </div>
+                            </div>
+                            <div class="skill-container">
+                                <div class="skill-text">
+                                    <h4 class="skillTittle">Javascript<span>( Jquery, React JS )</span></h4>
+                                    <h4 id="jscriptPercent" class="percentage">0%</h4>
+                                </div>
+                                <div class="barbackground">
+                                    <div id="jscriptBar" class="myBar"></div>                                 
+                                </div>
+                            </div>
+                            <div class="skill-container">
+                                <div class="skill-text">
+                                    <h4 class="skillTittle">PHP</h4>
+                                    <h4 id="phpPercent" class="percentage">0%</h4>
+                                </div>
+                                <div class="barbackground">
+                                    <div id="phpBar" class="myBar"></div>                                 
+                                </div>
+                            </div>
+                            <div class="skill-container">
+                                <div class="skill-text">
+                                    <h4 class="skillTittle">Adobe Photoshop</h4>
+                                    <h4 id="photosPercent" class="percentage">0%</h4>
+                                </div>
+                                <div class="barbackground">
+                                    <div id="photosBar" class="myBar"></div>                                 
+                                </div>
+                            </div>
+                            <div class="skill-container">
+                                <div class="skill-text">
+                                    <h4 class="skillTittle">Adobe Premiere</h4>
+                                    <h4 id="premPercent" class="percentage">0%</h4>
+                                </div>
+                                <div class="barbackground">
+                                    <div id="premBar" class="myBar"></div>                                 
+                                </div>
+                            </div>
+                            <div class="line-container"></div>
+                            <div class="work-background-container">
+                                <div class="work-experience">
+                                    <div class="work-container">
+                                        <div class="we-header">
+                                            <i class="fas fa-briefcase"></i>
+                                            <h1 class="we-tittle">experience</h1>
+                                        </div>
+                                        <p class="yearwork">2018 <span>-</span> 2020</p>
+                                        <h1 class="postittle"> JUNIOR PROGRAMMER</h1>
+                                        <h2>TSPI Mutual Benefit Association</h2>
+                                        <p class="companycat">Micro-insurance Company</p>
+                                        <p class="tasks">Tasks</p>
+                                        <ul>
+                                            <li>Full Stack Developer</li>
+                                            <li>Data Reporting Analyst</li>
+                                            <li>Train/Support End-Users</li>
+                                        </ul>
+                                    </div>
+                                    <div class="line-container"></div>
+                                    <div class="certificate-container">
+                                        <div class="cc-header">
+                                            <i class="fa fa-certificate"></i>
+                                            <h1>certificate</h1>
+                                        </div>
+                                        <p class="yearwork">2016 <span>-</span> 2017</p>
+                                        <h1 class="postittle"> ON-THE-JOB-TRAINING</h1>
+                                        <h2>Civil Aviation Authority of the Philippines</h2>
+                                        <p class="depcat">Management Information System Department</p>
+                                        <p class="yearwork">2014 <span>-</span> 2016</p>
+                                        <h1 class="postittle"> ON-THE-JOB-TRAINING</h1>
+                                        <h2>Office of the Solicitor General</h2>
+                                        <p class="depcat">Case Management Service</p>
+                                    </div>
+                                </div>
+                                <div class="projects">
+                                    <div id=projline class="line-container"></div>
+                                    <div class="p-header">
+                                        <i class="fas fa-clipboard-list"></i>
+                                        <h1 class="p_tittle">projects</h1>
+                                    </div>
+                                    <div class="mbapolaris">
+                                        <p class="yearwork">04/2018 <span>-</span> 11/2018</p>
+                                        <h1 class="projname">MBA POLARIS</h1>
+                                        <h2>TSPI Mutual Benefit Association</h2>
+                                        <p class="projtype">Professional Project</p>
+                                    </div>
+                                    <div class="pcshs">
+                                        <p class="yearwork">11/2017  <span>-</span> 02/2018</p>
+                                        <h1 class="projname">PCSHS LIBRARY SYSTEM</h1>
+                                        <h2>Pasay City South High School</h2>
+                                        <p class="projtype">Freelance Thesis Project</p>
+                                    </div>
+                                    <div class="enq">
+                                        <p class="yearwork">12/2016  <span>-</span> 02/2017</p>
+                                        <h1 class="projname">ELECTRONIC NUMBERING QUEUE</h1>
+                                        <h2>Philippine State College of Aeronautics</h2>
+                                        <p class="projtype">Thesis Project</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="aboutme-container">
+                        <h1 class="resume-header">about me</h1>
+                        <h2 class="resume-subheader">25 years <span>/</span> Taguig <span>/</span>Freelance</h2>
+                        <p class="resume-obj">To work in a professional environment and gain more knowledge about 
+                            web development and software development to create superior applications, websites 
+                            and other core systems that will be useful to the end-users</p>
+                            <div class="line-container"></div>
+                            <div class="aboutme-background-container">
+                                <div class="about-me">
+                                    <div class="education-container">
+                                        <div class="am-header">
+                                            <i class="fa fa-graduation-cap"></i>
+                                            <h1 class="am-tittle">education</h1>
+                                        </div>
+                                        <p class="yearstudy">2015 <span>-</span> 2017</p>
+                                        <h1 class="coursetittle">Bachelor of Science in Aviation Information Technology</h1>
+                                        <h2>Philippine State College of Aeronautics</h2>
+                                        <p class="schoolloc">Pasay City</p>
+                                    </div>
+                                    <div class="education-container">
+                                        <p class="yearstudy">2012 <span>-</span> 2015</p>
+                                        <h1 class="coursetittle">Associate in Aviation Information Technology</h1>
+                                        <h2>Philippine State College of Aeronautics</h2>
+                                        <p class="schoolloc">Pasay City</p>
+                                    </div>
+                                    <div id="languageline" class="line-container"></div>
+                                    <div class="language-container">
+                                        <div class="lang-header">
+                                            <i class="fa fa-language"></i>
+                                            <h1 class="lang-tittle">language</h1>
+                                        </div>
+                                        <div class="lang-container">
+                                            <div class="english-lang">
+                                                <h1 class="lang">English</h1>
+                                                <h2>Professional Working Proficiency</h2>
+                                            </div>
+                                            <div class="filipino-lang">
+                                                <h1 class="lang">Filipino</h1>
+                                                <h2>Native or Bilingual Proficiency</h2>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="interestline" class="line-container"></div>
+                                    <div class="interest-container">
+                                        <div class="interest-header">
+                                            <i class="material-icons">&#xe87d;</i>
+                                            <h1 class="interest-tittle">interest</h1>
+                                        </div>
+                                        <div class="interest-content">
+                                            <div class="softdev">
+                                                <p class="interest-desc-1">Software Development</p>   
+                                            </div>
+                                            <div class="webdev">
+                                                <p class="interest-desc-1">Web Development</p>  
+                                            </div>
+                                            <div class="graphdes">
+                                                <p class="interest-desc-1">Graphic Design</p>
+                                            </div>
+                                            <div class="filmake">
+                                                <p class="interest-desc-2">Filmmaking</p>
+                                            </div>
+                                            <div class="videoedit">
+                                                <p class="interest-desc-2">Video Editing</p>
+                                            </div>
+                                            <div class="music">
+                                                <p class="interest-desc-2">Music</p>
+                                            </div>
+                                            <div class="games">
+                                                <p class="interest-desc-2">Games</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                    <div class="contact-container">
+                        <h1 class="resume-header">contact me</h1>
+                        <p class="contactme-text">if you have job offer and question about my rate please contact me at the mention phone number and email address below.</p>
+                        <div class="line-container"></div>
+                        <div class="map-container">
+                            <iframe style="pointer-events: none;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d61799.95350206976!2d121.0303828606332!3d14.513535203545404!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397cf4a54fe3001%3A0x2fae7af0a998d2ad!2sTaguig%2C%20Metro%20Manila!5e0!3m2!1sen!2sph!4v1597390461772!5m2!1sen!2sph" 
+                             frameborder="0" style="border:0;" aria-hidden="false" tabindex="0" scrolling="no"></iframe>
+                        </div>
+                        <div class="contact-info">
+                            <div class="contact-info-left">
+                                <div class="location">
+                                    <i class="material-icons">&#xe0c8;</i>
+                                    <h1>Taguig City</h1>
+                                </div>
+                                <div class="phone">
+                                    <i class="material-icons">&#xe324;</i>
+                                    <h1>09616952545</h1>
+                                </div>
+                            </div>
+                            <div class="contact-info-right">
+                                <div class="email-1">
+                                    <i class="material-icons">&#xe0e1;</i>
+                                    <h1>alejandrobendijo_28@yahoo.com</h1>
+                                </div>
+                                <div class="email-2">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="socialmedia-container">
+                            <ul class="soc-list-contact">
+                                <li><a href="https://www.facebook.com/Junbendinwho" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                                 <li><a href="https://www.messenger.com/t/Junbendinwho" target="_blank"><i class="fab fa-facebook-messenger"></i></a></li>
+                                <li><a href="http://linkedin.com/in/alejandrobendijo" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="namebot">
+        <div class="namebot-header">
+            <h1>ALEJANDRO V. BENDIJO JR.</h1>
+        </div>
+        <div class="namebot-jobtittle">
+            <p>SOFTWARE DEVELOPER / WEB DEVELOPER</p>
+        </div>
+    </div>
+</body>
+<script src="resume.js"></script>
+</html>
