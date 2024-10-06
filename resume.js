@@ -1,4 +1,5 @@
 $(window).load(function(){
+
     $(".text-content").mCustomScrollbar({
       theme: "minimal",
       alwaysShowScrollbar:0,
@@ -17,7 +18,13 @@ $(window).load(function(){
     premPercent();
     $(".aboutme-container").hide();
     $(".contact-container").hide(); 
+
+    dob = new Date("1995/07/28");
+    var today = new Date();
+    var age = Math.floor((today-dob) / (365.25 * 24 * 60 * 60 * 1000));
+    $('#age').text(age + " years old");
 });
+
 
 var resumesel = 1
 var aboutmesel = 0
@@ -336,20 +343,20 @@ $(function() {
 
 //SKILL PERCENT
 
-//HTML Percent
+//C# Percent
 
-var htmlcnt = 0;
-function HTMLPercent() {
-  if (htmlcnt == 0) {
-    htmlcnt = 1;
-    var percent = document.getElementById("htmlPercent")
-    var elem = document.getElementById("htmlBar");
+var cscnt = 0;
+function csPercent() {
+  if (cscnt == 0) {
+    cscnt = 1;
+    var percent = document.getElementById("c#Percent")
+    var elem = document.getElementById("c#Bar");
     var width = 1;
     var id = setInterval(frame, 17);
     function frame() {
-      if (width >= 89) {
+      if (width >= 90) {
         clearInterval(id);
-        htmlcnt = 0;
+        cscnt = 0;
       } else {
         width++;
         elem.style.width = width + "%";
@@ -359,20 +366,20 @@ function HTMLPercent() {
   }
 }
 
-// CSS Percent
+//VB.NET Percent
 
-var csscnt = 0;
-function CSSPercent() {
-  if (csscnt == 0) {
-    csscnt = 1;
-    var percent = document.getElementById("cssPercent")
-    var elem = document.getElementById("cssBar");
+var vbcnt = 0;
+function vbPercent() {
+  if (vbcnt == 0) {
+    vbcnt = 1;
+    var percent = document.getElementById("vbPercent")
+    var elem = document.getElementById("vbBar");
     var width = 1;
     var id = setInterval(frame, 17);
     function frame() {
-      if (width >= 86) {
+      if (width >= 90) {
         clearInterval(id);
-        csscnt = 0;
+        vbcnt = 0;
       } else {
         width++;
         elem.style.width = width + "%";
@@ -406,20 +413,21 @@ function aspPercent() {
 }
 
 
-//VB.NET Percent
 
-var vbcnt = 0;
-function vbPercent() {
-  if (vbcnt == 0) {
-    vbcnt = 1;
-    var percent = document.getElementById("vbPercent")
-    var elem = document.getElementById("vbBar");
+//HTML Percent
+
+var htmlcnt = 0;
+function HTMLPercent() {
+  if (htmlcnt == 0) {
+    htmlcnt = 1;
+    var percent = document.getElementById("htmlPercent")
+    var elem = document.getElementById("htmlBar");
     var width = 1;
     var id = setInterval(frame, 17);
     function frame() {
-      if (width >= 90) {
+      if (width >= 95) {
         clearInterval(id);
-        vbcnt = 0;
+        htmlcnt = 0;
       } else {
         width++;
         elem.style.width = width + "%";
@@ -429,20 +437,43 @@ function vbPercent() {
   }
 }
 
-//C# Percent
+// CSS Percent
 
-var cscnt = 0;
-function csPercent() {
-  if (cscnt == 0) {
-    cscnt = 1;
-    var percent = document.getElementById("c#Percent")
-    var elem = document.getElementById("c#Bar");
+var csscnt = 0;
+function CSSPercent() {
+  if (csscnt == 0) {
+    csscnt = 1;
+    var percent = document.getElementById("cssPercent")
+    var elem = document.getElementById("cssBar");
     var width = 1;
     var id = setInterval(frame, 17);
     function frame() {
-      if (width >= 70) {
+      if (width >= 90) {
         clearInterval(id);
-        cscnt = 0;
+        csscnt = 0;
+      } else {
+        width++;
+        elem.style.width = width + "%";
+        percent.innerHTML = width * 1  + '%';
+      }
+    }
+  }
+}
+
+//Javascript Percent
+
+var jscriptcnt = 0;
+function JscriptPercent() {
+  if (jscriptcnt == 0) {
+    jscriptcnt = 1;
+    var percent = document.getElementById("jscriptPercent")
+    var elem = document.getElementById("jscriptBar");
+    var width = 1;
+    var id = setInterval(frame, 17);
+    function frame() {
+      if (width >= 87) {
+        clearInterval(id);
+        jscriptcnt = 0;
       } else {
         width++;
         elem.style.width = width + "%";
@@ -463,7 +494,7 @@ function mssqlPercent() {
     var width = 1;
     var id = setInterval(frame, 17);
     function frame() {
-      if (width >= 83) {
+      if (width >= 88) {
         clearInterval(id);
         mssqlcnt = 0;
       } else {
@@ -476,28 +507,7 @@ function mssqlPercent() {
 }
 
 
-//Javascript Percent
 
-var jscriptcnt = 0;
-function JscriptPercent() {
-  if (jscriptcnt == 0) {
-    jscriptcnt = 1;
-    var percent = document.getElementById("jscriptPercent")
-    var elem = document.getElementById("jscriptBar");
-    var width = 1;
-    var id = setInterval(frame, 17);
-    function frame() {
-      if (width >= 72) {
-        clearInterval(id);
-        jscriptcnt = 0;
-      } else {
-        width++;
-        elem.style.width = width + "%";
-        percent.innerHTML = width * 1  + '%';
-      }
-    }
-  }
-}
 
 //PHP Percent
 

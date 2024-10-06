@@ -983,3 +983,11 @@ body{
     display: none;
 
 }
+
+.custom-icon-1{
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    background: url('ico/facebook-brands-solid.svg') no-repeat center center;
+    background-size: contain;
+}

@@ -9,16 +9,17 @@
     <link rel="stylesheet" href="//malihu.github.io/custom-scrollbar/jquery.mCustomScrollbar.min.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="//malihu.github.io/custom-scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
-    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+    <link rel="stylesheet" href="ico/all.min.css">
+    <link rel="stylesheet" href="ico/fontawesome.min.css">
+    <link rel="stylesheet" href="resume.css">
     <link rel="stylesheet" href="resume.css">
     <link rel="stylesheet" href="mobilestyle.css">`
     <script src="http://code.jquery.com/color/jquery.color-2.1.2.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
 </head>
 <body>
-    <!--netlify deploy --prod-->
     <!-- cursor elements -->
     <div class="cursor cursor--outer"></div>
     <div class="cursor cursor--inner"></div>
@@ -50,9 +51,9 @@
                         </div>
                         <div class="my-social-list">
                             <ul>
-                                <li><a href="https://www.facebook.com/Junbendinwho" target="_blank"><i class="fa fa-facebook"></i></a></li>
-                                 <li><a href="https://www.messenger.com/t/Junbendinwho" target="_blank"><i class="fab fa-facebook-messenger"></i></a></li>
-                                <li><a href="http://linkedin.com/in/alejandrobendijo" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
+                                <li><a href="https://www.facebook.com/Junbendinwho" target="_blank"><i class="fa-brands fa-facebook-f"></i></a></li>
+                                 <li><a href="https://www.messenger.com/t/Junbendinwho" target="_blank"><i class="fa-brands fa-facebook-messenger"></i></a></li>
+                                <li><a href="http://linkedin.com/in/alejandrobendijo" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a></li>
                             </ul>
                         </div>
                     </div>
@@ -67,8 +68,8 @@
                 <div class="list">
                     <div class="circlediv"></div>
                     <ul class="navsidemenu">
-                        <li class="link1"><i id="resume" class='fas fa-briefcase'></i></li>
-                        <li class="link2"><i id="aboutme" class='far fa-user'></i></li>
+                        <li class="link1"><i id="resume" class='fa fa-briefcase'></i></li>
+                        <li class="link2"><i id="aboutme" class='fa fa-user'></i></li>
                         <li class="link3"><i id="contact" class='fa fa-phone'></i></li>
                     </ul>
                 </div>
@@ -81,7 +82,7 @@
                 <div class="text-container">
                     <div class="resume-container">
                         <h1 class="resume-header">resume</h1>
-                        <h2 class="resume-subheader">2 years professional experience <span>/</span> 6 years in coding <span>/</span>  Bachelor's Degree</h2>
+                        <h2 class="resume-subheader">4 years professional experience <span>/</span> 8 years in coding <span>/</span>  Bachelor's Degree</h2>
                         <p class="resume-obj">To work in a professional environment and gain more knowledge about 
                             web development and software development to create superior applications, websites 
                             and other core systems that will be useful to the end-users</p>
@@ -93,6 +94,33 @@
                         <div class="skillset">
                             <div class="skill-container">
                                 <div class="skill-text">
+                                    <h4 class="skillTittle">C# <span>( MVC )</span></h4>
+                                    <h4 id="c#Percent" class="percentage">0%</h4>
+                                </div>
+                                <div class="barbackground">
+                                    <div id="c#Bar" class="myBar"></div>                                 
+                                </div>
+                            </div>
+                            <div class="skill-container">
+                                <div class="skill-text">
+                                    <h4 class="skillTittle">VB.NET <span>( Windows Application, Web Forms )</span> </h4>
+                                    <h4 id="vbPercent" class="percentage">0%</h4>
+                                </div>
+                                <div class="barbackground">
+                                    <div id="vbBar" class="myBar"></div>                                 
+                                </div>
+                            </div>
+                            <div class="skill-container">
+                                <div class="skill-text">
+                                    <h4 class="skillTittle">ASP.NET <span>( Web Forms ) </span></h4>
+                                    <h4 id="aspPercent" class="percentage">0%</h4>
+                                </div>
+                                <div class="barbackground">
+                                    <div id="aspBar" class="myBar"></div>                                 
+                                </div>
+                            </div>
+                            <div class="skill-container">
+                                <div class="skill-text">
                                     <h4 class="skillTittle">HTML</h4>
                                     <h4 id="htmlPercent" class="percentage">0%</h4>
                                 </div>
@@ -102,7 +130,7 @@
                             </div>
                             <div class="skill-container">
                                 <div class="skill-text">
-                                    <h4 class="skillTittle">CSS</h4>
+                                    <h4 class="skillTittle">CSS<span>( Bootstrap )</span></h4>
                                     <h4 id="cssPercent" class="percentage">0%</h4>
                                 </div>
                                 <div class="barbackground">
@@ -111,47 +139,20 @@
                             </div>
                             <div class="skill-container">
                                 <div class="skill-text">
-                                    <h4 class="skillTittle">ASP.NET</h4>
-                                    <h4 id="aspPercent" class="percentage">0%</h4>
-                                </div>
-                                <div class="barbackground">
-                                    <div id="aspBar" class="myBar"></div>                                 
-                                </div>
-                            </div>
-                            <div class="skill-container">
-                                <div class="skill-text">
-                                    <h4 class="skillTittle">VB.NET</h4>
-                                    <h4 id="vbPercent" class="percentage">0%</h4>
-                                </div>
-                                <div class="barbackground">
-                                    <div id="vbBar" class="myBar"></div>                                 
-                                </div>
-                            </div>
-                            <div class="skill-container">
-                                <div class="skill-text">
-                                    <h4 class="skillTittle">C#</h4>
-                                    <h4 id="c#Percent" class="percentage">0%</h4>
-                                </div>
-                                <div class="barbackground">
-                                    <div id="c#Bar" class="myBar"></div>                                 
-                                </div>
-                            </div>
-                            <div class="skill-container">
-                                <div class="skill-text">
-                                    <h4 class="skillTittle">SQL<span>( MSSQL, MySQL )</h4>
-                                    <h4 id="mssqlPercent" class="percentage">0%</h4>
-                                </div>
-                                <div class="barbackground">
-                                    <div id="mssqlBar" class="myBar"></div>                                 
-                                </div>
-                            </div>
-                            <div class="skill-container">
-                                <div class="skill-text">
-                                    <h4 class="skillTittle">Javascript<span>( Jquery, React JS )</span></h4>
+                                    <h4 class="skillTittle">Javascript<span>( Jquery, AJAX )</span></h4>
                                     <h4 id="jscriptPercent" class="percentage">0%</h4>
                                 </div>
                                 <div class="barbackground">
                                     <div id="jscriptBar" class="myBar"></div>                                 
+                                </div>
+                            </div>
+                            <div class="skill-container">
+                                <div class="skill-text">
+                                    <h4 class="skillTittle">SQL<span>( MSSQL, MySQL )</span></h4>
+                                    <h4 id="mssqlPercent" class="percentage">0%</h4>
+                                </div>
+                                <div class="barbackground">
+                                    <div id="mssqlBar" class="myBar"></div>                                 
                                 </div>
                             </div>
                             <div class="skill-container">
@@ -186,40 +187,48 @@
                                 <div class="work-experience">
                                     <div class="work-container">
                                         <div class="we-header">
-                                            <i class="fas fa-briefcase"></i>
+                                            <i class="fa fa-briefcase"></i>
                                             <h1 class="we-tittle">experience</h1>
                                         </div>
+                                        <p class="yearwork">2023 <span>-</span> PRESENT</p>
+                                        <h1 class="postittle"> Web Developer</h1>
+                                        <h2>Ncore Systems</h2>
+                                        <p class="companycat">Banking Software (Solutions)</p>
+                                        <p class="tasks">Tasks</p>
+                                        <ul>
+                                            <li>Performs wide range of programming. Creates, writes and
+                                                modifies computer programs based on a conceptual
+                                                description of the project requirements into code.</li>
+                                            <li>Develops remittance system for clients using MVC (C#)</li>
+                                            <li>Creating Tables/Views/Stored Procedures and Queries for the
+                                                System and Reports (MSSQL)</li>
+                                            <li>Using Web API for standard CRUD from Application to
+                                                    Database</li>
+                                            <li>Performs unit testing after creating new module</li>
+                                            <li>Manage Deployment for Cloud Servers using IIS </li>
+                                        </ul>
+                                        <br>
                                         <p class="yearwork">2018 <span>-</span> 2020</p>
                                         <h1 class="postittle"> JUNIOR PROGRAMMER</h1>
                                         <h2>TSPI Mutual Benefit Association</h2>
                                         <p class="companycat">Micro-insurance Company</p>
                                         <p class="tasks">Tasks</p>
                                         <ul>
-                                            <li>Full Stack Developer</li>
-                                            <li>Data Reporting Analyst</li>
+                                            <li >Develops Inhouse system using ASP.Net Webforms (VB.Net) as
+                                                a backend tool and HTML,CSS,Javascript(Jquery) as a Front
+                                                End and MSSQL as Database.</li>
+                                            <li>Creating Queries in MSSQL for the System and Reports</li>
+                                            <li>Creating SSRS (Reports) using Visual Studio</li>
+                                            <li>Maintaining all Queries in a Stored Procedure</li>
                                             <li>Train/Support End-Users</li>
+                                            <li>Receives and resolves technical and programming issues</li>
                                         </ul>
-                                    </div>
-                                    <div class="line-container"></div>
-                                    <div class="certificate-container">
-                                        <div class="cc-header">
-                                            <i class="fa fa-certificate"></i>
-                                            <h1>certificate</h1>
-                                        </div>
-                                        <p class="yearwork">2016 <span>-</span> 2017</p>
-                                        <h1 class="postittle"> ON-THE-JOB-TRAINING</h1>
-                                        <h2>Civil Aviation Authority of the Philippines</h2>
-                                        <p class="depcat">Management Information System Department</p>
-                                        <p class="yearwork">2014 <span>-</span> 2016</p>
-                                        <h1 class="postittle"> ON-THE-JOB-TRAINING</h1>
-                                        <h2>Office of the Solicitor General</h2>
-                                        <p class="depcat">Case Management Service</p>
                                     </div>
                                 </div>
                                 <div class="projects">
                                     <div id=projline class="line-container"></div>
                                     <div class="p-header">
-                                        <i class="fas fa-clipboard-list"></i>
+                                        <i class="fa fa-list"></i>
                                         <h1 class="p_tittle">projects</h1>
                                     </div>
                                     <div class="mbapolaris">
@@ -240,13 +249,34 @@
                                         <h2>Philippine State College of Aeronautics</h2>
                                         <p class="projtype">Thesis Project</p>
                                     </div>
+                                    <div class="line-container"></div>
+                                    <div class="certificate-container">
+                                        <div class="cc-header">
+                                            <i class="fa fa-certificate"></i>
+                                            <h1>certificate</h1>
+                                        </div>
+                                        <p class="yearwork">2016 <span>-</span> 2017</p>
+                                        <h1 class="postittle"> ON-THE-JOB-TRAINING</h1>
+                                        <h2>Civil Aviation Authority of the Philippines</h2>
+                                        <p class="depcat">Management Information System Department</p>
+                                        <p class="yearwork">2014 <span>-</span> 2016</p>
+                                        <h1 class="postittle"> ON-THE-JOB-TRAINING</h1>
+                                        <h2>Office of the Solicitor General</h2>
+                                        <p class="depcat">Case Management Service</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="aboutme-container">
+
                         <h1 class="resume-header">about me</h1>
-                        <h2 class="resume-subheader">25 years <span>/</span> Taguig <span>/</span>Freelance</h2>
+                        <h2 class="resume-subheader">
+                            <label for="age" id="age">
+                                
+                            </label>
+                             <span>/</span> Taguig <span>/</span>Programmer
+                        </h2>
                         <p class="resume-obj">To work in a professional environment and gain more knowledge about 
                             web development and software development to create superior applications, websites 
                             and other core systems that will be useful to the end-users</p>
@@ -348,11 +378,11 @@
                             </div>
                         </div>
                         <div class="socialmedia-container">
-                            <ul class="soc-list-contact">
+                            <!-- <ul class="soc-list-contact">
                                 <li><a href="https://www.facebook.com/Junbendinwho" target="_blank"><i class="fa fa-facebook"></i></a></li>
                                  <li><a href="https://www.messenger.com/t/Junbendinwho" target="_blank"><i class="fab fa-facebook-messenger"></i></a></li>
                                 <li><a href="http://linkedin.com/in/alejandrobendijo" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
-                            </ul>
+                            </ul> -->
                         </div>
                     </div>
                 </div>
