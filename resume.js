@@ -176,7 +176,7 @@ $('#resume').click(function(){
           phpPercent();
           photosPercent()
           premPercent();
-          $(".right-content").animate({width:'1152'})
+          $(".right-content").animate({width:'auto'})
         })  
     }
     $(".circlediv").animate({ 
@@ -231,11 +231,11 @@ $('#resume').click(function(){
         })
         $(".right-content").animate({width:rcontw}
           ,function(){
-            $(".right-content").animate({width:'1152'})
+            $(".right-content").animate({width:'auto'})
           })
       }
       $(".circlediv").animate({ 
-        top: "51%",
+        top: "49.7%",
       }, 600 );
       $("#resume").css("color","#d6d6d6")
       $("#aboutme").css("color","#4e90cd")
@@ -276,11 +276,11 @@ $('#contact').click(function(){
       })
       $(".right-content").animate({width:rcontw}
         ,function(){
-          $(".right-content").animate({width:'1152'})
+          $(".right-content").animate({width:'auto'})
         })
     }
     $(".circlediv").animate({ 
-      top: "61.3%",
+      top: "58.1%",
     }, 600 );
     $("#resume").css("color","#d6d6d6")
     $("#aboutme").css("color","#d6d6d6")
