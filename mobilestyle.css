@@ -164,7 +164,7 @@
     }
 
     .circlediv{
-        display: none;
+         display: none !important;
     }
 
     /* Outer Cursor Circle */

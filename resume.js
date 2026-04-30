@@ -1,585 +1,334 @@
-$(window).load(function(){
+$(document).ready(function () {
 
     $(".text-content").mCustomScrollbar({
-      theme: "minimal",
-      alwaysShowScrollbar:0,
-      scrollButtons: {enable:true},
-      scrollInertia: 2000
+        theme: "minimal",
+        alwaysShowScrollbar: 0,
+        scrollButtons: { enable: true },
+        scrollInertia: 2000
     });
-    HTMLPercent();
-    CSSPercent();
-    JscriptPercent();
-    aspPercent();
-    vbPercent();
-    csPercent();
-    mssqlPercent();
-    phpPercent();
-    photosPercent()
-    premPercent();
+
+    loadSkills();
+
     $(".aboutme-container").hide();
-    $(".contact-container").hide(); 
+    $(".contact-container").hide();
 
     dob = new Date("1995/07/28");
     var today = new Date();
-    var age = Math.floor((today-dob) / (365.25 * 24 * 60 * 60 * 1000));
+    var age = Math.floor((today - dob) / (365.25 * 24 * 60 * 60 * 1000));
     $('#age').text(age + " years old");
+
+    updateNavUI();
 });
 
 
-var resumesel = 1
-var aboutmesel = 0
-var contactsel = 0
+// ========================
+// STATE CONTROL
+// ========================
+var resumesel = 1;
+var aboutmesel = 0;
+var contactsel = 0;
+
+// 🔒 GLOBAL ANIMATION LOCK
+let isAnimating = false;
 
 
-// set the starting position of the cursor outside of the screen
+function updateNavUI() {
+
+    $("#resume").css("color", resumesel ? "#4e90cd" : "#d6d6d6");
+    $("#aboutme").css("color", aboutmesel ? "#4e90cd" : "#d6d6d6");
+    $("#contact").css("color", contactsel ? "#4e90cd" : "#d6d6d6");
+}
+
+// ========================
+// CURSOR
+// ========================
 var clientX = -300,
     clientY = -300,
-// elements 
     outerCursor = document.querySelector(".cursor--outer"),
-    innerCursor = document.querySelector(".cursor--inner")
-var initCursor = function() {
-  // add listener to track the current mouse position
-  document.addEventListener("mousemove", function(e) {
-    clientX = e.clientX
-    clientY = e.clientY
-  });
-  
-  var render = function() {
-    TweenMax.set(outerCursor, {
-      x: clientX,
-      y: clientY,
-      delay: .08,
-      ease: Power1.easeOut
+    innerCursor = document.querySelector(".cursor--inner");
+
+var initCursor = function () {
+    document.addEventListener("mousemove", function (e) {
+        clientX = e.clientX;
+        clientY = e.clientY;
     });
-    
-     TweenMax.set(innerCursor, {
-      x: clientX,
-      y: clientY
-    });
-    
+
+    var render = function () {
+        TweenMax.set(outerCursor, {
+            x: clientX,
+            y: clientY,
+            delay: .08,
+            ease: Power1.easeOut
+        });
+
+        TweenMax.set(innerCursor, {
+            x: clientX,
+            y: clientY
+        });
+
+        requestAnimationFrame(render);
+    };
+
     requestAnimationFrame(render);
-  };
-  
-  requestAnimationFrame(render);
 };
 
 initCursor();
 
-mconth = $('.main-container').height();
-if ($(window).width() < 1400 && $(window).width() > 760) {
-  $('.right-content').height(mconth * .8);
-  if ($(window).height() < 750) {
-    $(".circlediv").hide()
-  }else{
-    $(".circlediv").show()
-  }
-}
-else{
-  if ($(window).width() < 760){
-    $('.right-content').height(mconth * .79);
-    $(".circlediv").hide()
-  }
-  else{
-    $('.right-content').height(mconth * .79);
-    if ($(window).height() <= 750) {
-      $(".circlediv").hide()
-    }else{
-      $(".circlediv").show()
+
+// ========================
+// LAYOUT RESIZE
+// ========================
+function resizeLayout() {
+    let mconth = $('.main-container').height();
+
+    if ($(window).width() < 1400 && $(window).width() > 760) {
+        $('.right-content').height(mconth * .8);
+
+        if ($(window).height() < 750) $(".circlediv").hide();
+        else $(".circlediv").show();
+
+    } else {
+        $('.right-content').height(mconth * .79);
+
+        if ($(window).height() <= 750) $(".circlediv").hide();
+        else $(".circlediv").show();
     }
-  }
 }
 
-//Resize Animation
-
-$(window).resize(function(){
-  mconth = $('.main-container').height();
-  if ($(window).width() < 1400 && $(window).width() > 760) {
-    $('.right-content').height(mconth * .8);
-    if ($(window).height() < 750) {
-      $(".circlediv").hide()
-    }else{
-      $(".circlediv").show()
-    }
-  }
-  else{
-    if ($(window).width() < 760){
-      $('.right-content').height(mconth * .79);
-      $(".circlediv").hide()
-    }
-    else{
-      $('.right-content').height(mconth * .79);
-      if ($(window).height() < 750) {
-        $(".circlediv").hide()
-      }else{
-        $(".circlediv").show()
-      }
-    }
-  }
-});
+resizeLayout();
+$(window).resize(resizeLayout);
 
 
-//Resume Clicked
+// ========================
+// NAV CLICK: RESUME
+// ========================
+$('#resume').click(function () {
 
-$('#resume').click(function(){
-  if (resumesel !=1){
-  var origheightrd = $('.right-content').height();
-    if ($(window).width() < 760) {
-      rconth = $('.right-content').height();
-      swidthpx = rconth * .03
-      $(".right-content").animate({height:swidthpx},500
-      ,function(){
-        $('.percentage').text("0%")
-        $('.myBar').width(0)
-        $(".aboutme-container").hide(10);
-        $(".resume-container").hide(10);
-        $(".contact-container").hide(10);
-        $(".resume-container").show(10);
-        
-      })
-      $(".right-content").animate({height:origheightrd},800
-      ,function()
-        {
-          HTMLPercent();
-          CSSPercent();
-          JscriptPercent();
-          aspPercent();
-          vbPercent();
-          csPercent();
-          mssqlPercent();
-          phpPercent();
-          photosPercent()
-          premPercent();
-        })  
-    }
-   else {
-      rcontw = $('.right-content').width();
-      swidthpx = rcontw * .45
-      $(".right-content").animate({width:swidthpx}
-      ,function(){
-        $('.percentage').text("0%")
-        $('.myBar').width(0)
-        $(".aboutme-container").hide(10);
-        $(".resume-container").hide(10);
-        $(".contact-container").hide(10);
-        $(".resume-container").show(10);
-      })
-      $(".right-content").animate({width:rcontw}
-      ,function()
-        {
-          HTMLPercent();
-          CSSPercent();
-          JscriptPercent();
-          aspPercent();
-          vbPercent();
-          csPercent();
-          mssqlPercent();
-          phpPercent();
-          photosPercent()
-          premPercent();
-          $(".right-content").animate({width:'auto'})
-        })  
-    }
-    $(".circlediv").animate({ 
-      top: "41%",
-    }, 600);
-    $("#resume").css("color","#4e90cd")
-    $("#aboutme").css("color","#d6d6d6")
-    $("#contact").css("color","#d6d6d6")
-    // $("#resume").animate({ 
-    //   color: "#4e90cd",
-    // },150 );
-    // $("#aboutme").animate({ 
-    //   color: "#d6d6d6",
-    // },300 );
-    // $("#contact").animate({ 
-    //   color: "#d6d6d6",
-    // },300 );
-  }
-    resumesel = 1
-    aboutmesel = 0
-    contactsel = 0
-})
+    if (isAnimating || resumesel == 1) return;
+    isAnimating = true;
 
-//About me Clicked
-
-  $('#aboutme').click(function(){
-    if (aboutmesel!=1){
-      var origheightrd = $('.right-content').height();
-      if ($(window).width() < 760) {
-        rconth = $('.right-content').height();
-        swidthpx = rconth * .03
-        $(".right-content").animate({height:swidthpx},500
-        ,function()
-        {
-          $(".aboutme-container").hide(10);
-          $(".resume-container").hide(10);
-          $(".contact-container").hide(10);
-          $(".aboutme-container").show(10);
-        })
-        $(".right-content").animate({height:origheightrd},800)
-      }
-      else{
-        rcontw = $('.right-content').width();
-        swidthpx = rcontw * .45
-        $(".right-content").animate({width:swidthpx}
-        ,function()
-        {
-          $(".aboutme-container").hide(10);
-          $(".resume-container").hide(10);
-          $(".contact-container").hide(10);
-          $(".aboutme-container").show(10);
-        })
-        $(".right-content").animate({width:rcontw}
-          ,function(){
-            $(".right-content").animate({width:'auto'})
-          })
-      }
-      $(".circlediv").animate({ 
-        top: "49.7%",
-      }, 600 );
-      $("#resume").css("color","#d6d6d6")
-      $("#aboutme").css("color","#4e90cd")
-      $("#contact").css("color","#d6d6d6")
-    }
-    resumesel = 0
-    aboutmesel = 1
-    contactsel = 0
-  })
-
-//Contact me Clicked
-
-$('#contact').click(function(){
-  if (contactsel!=1){
     var origheightrd = $('.right-content').height();
+
     if ($(window).width() < 760) {
-      rconth = $('.right-content').height();
-      swidthpx = rconth * .04
-      $(".right-content").animate({height:swidthpx},500
-      ,function()
-      {
-        $(".aboutme-container").hide(10);
-        $(".resume-container").hide(10);
-        $(".contact-container").hide(10);
-        $(".contact-container").show(10);
-      })
-      $(".right-content").animate({height:origheightrd},800)
-    } else{
-      rcontw = $('.right-content').width();
-      swidthpx = rcontw * .45
-      $(".right-content").animate({width:swidthpx}
-      ,function()
-      {
-        $(".aboutme-container").hide(10);
-        $(".resume-container").hide(10);
-        $(".contact-container").hide(10);
-        $(".contact-container").show(10);
-      })
-      $(".right-content").animate({width:rcontw}
-        ,function(){
-          $(".right-content").animate({width:'auto'})
-        })
+
+        rconth = $('.right-content').height();
+        swidthpx = rconth * .03;
+
+        $(".right-content").animate({ height: swidthpx }, 500, function () {
+
+            $('.percentage').text("0%");
+            $('.myBar').width(0);
+
+            $(".aboutme-container, .contact-container").hide();
+            $(".resume-container").show();
+
+        }).animate({ height: origheightrd }, 800, function () {
+            loadSkills();
+        });
+
+    } else {
+
+        rcontw = $('.right-content').width();
+        swidthpx = rcontw * .45;
+
+        $(".right-content").animate({ width: swidthpx }, function () {
+
+            $('.percentage').text("0%");
+            $('.myBar').width(0);
+
+            $(".aboutme-container, .contact-container").hide();
+            $(".resume-container").show();
+
+        }).animate({ width: rcontw }, function () {
+            loadSkills();
+            $(".right-content").animate({ width: 'auto' });
+        });
     }
-    $(".circlediv").animate({ 
-      top: "58.1%",
-    }, 600 );
-    $("#resume").css("color","#d6d6d6")
-    $("#aboutme").css("color","#d6d6d6")
-    $("#contact").css("color","#4e90cd")
-  }
-  resumesel = 0
-  aboutmesel = 0
-  contactsel = 1
-})
 
-//IF NAVBAR IS SELECTED HOVER SETTINGS
+    $(".circlediv").animate({ top: "41%" }, 600, function () {
+        isAnimating = false; // UNLOCK HERE
+    });
 
-//resumesel
+    $("#resume").css("color", "#4e90cd");
+    $("#aboutme, #contact").css("color", "#d6d6d6");
 
-$("#resume").css("color","#4e90cd")
-
-$(function() {
-  $('#resume').hover(function() {
-    $("#resume").css("color","#4e90cd")
-  }, function() {
-    if(resumesel == 1){
-      $("#resume").css("color","#4e90cd")
-    }
-    else{
-      $("#resume").css("color","#d6d6d6")
-    }
-  });
-});
-
-//aboutmesel
-
-$(function() {
-  $('#aboutme').hover(function() {
-    $("#aboutme").css("color","#4e90cd")
-  }, function() {
-    if(aboutmesel == 1){
-      $("#aboutme").css("color","#4e90cd")
-    }
-    else{
-      $("#aboutme").css("color","#d6d6d6")
-    }
-  });
-});
-
-//contactsel
-
-$(function() {
-  $('#contact').hover(function() {
-    $("#contact").css("color","#4e90cd")
-  }, function() {
-    if(contactsel == 1){
-      $("#contact").css("color","#4e90cd")
-    }
-    else{
-      $("#contact").css("color","#d6d6d6")
-    }
-  });
+    resumesel = 1;
+    aboutmesel = 0;
+    contactsel = 0;
 });
 
 
-//SKILL PERCENT
+// ========================
+// NAV CLICK: ABOUT
+// ========================
+$('#aboutme').click(function () {
 
-//C# Percent
+    if (isAnimating || aboutmesel == 1) return;
+    isAnimating = true;
 
-var cscnt = 0;
-function csPercent() {
-  if (cscnt == 0) {
-    cscnt = 1;
-    var percent = document.getElementById("c#Percent")
-    var elem = document.getElementById("c#Bar");
-    var width = 1;
-    var id = setInterval(frame, 17);
-    function frame() {
-      if (width >= 90) {
-        clearInterval(id);
-        cscnt = 0;
-      } else {
-        width++;
-        elem.style.width = width + "%";
-        percent.innerHTML = width * 1  + '%';
-      }
+    var origheightrd = $('.right-content').height();
+
+    if ($(window).width() < 760) {
+
+        rconth = $('.right-content').height();
+        swidthpx = rconth * .03;
+
+        $(".right-content").animate({ height: swidthpx }, 500, function () {
+            $(".resume-container, .contact-container").hide();
+            $(".aboutme-container").show();
+        }).animate({ height: origheightrd }, 800);
+
+    } else {
+
+        rcontw = $('.right-content').width();
+        swidthpx = rcontw * .45;
+
+        $(".right-content").animate({ width: swidthpx }, function () {
+            $(".resume-container, .contact-container").hide();
+            $(".aboutme-container").show();
+        }).animate({ width: rcontw }, function () {
+            $(".right-content").animate({ width: 'auto' });
+        });
     }
-  }
+
+    $(".circlediv").animate({ top: "49.7%" }, 600, function () {
+        isAnimating = false;
+    });
+
+    $("#aboutme").css("color", "#4e90cd");
+    $("#resume, #contact").css("color", "#d6d6d6");
+
+    resumesel = 0;
+    aboutmesel = 1;
+    contactsel = 0;
+});
+
+
+// ========================
+// NAV CLICK: CONTACT
+// ========================
+$('#contact').click(function () {
+
+    if (isAnimating || contactsel == 1) return;
+    isAnimating = true;
+
+    var origheightrd = $('.right-content').height();
+
+    if ($(window).width() < 760) {
+
+        rconth = $('.right-content').height();
+        swidthpx = rconth * .04;
+
+        $(".right-content").animate({ height: swidthpx }, 500, function () {
+            $(".resume-container, .aboutme-container").hide();
+            $(".contact-container").show();
+        }).animate({ height: origheightrd }, 800);
+
+    } else {
+
+        rcontw = $('.right-content').width();
+        swidthpx = rcontw * .45;
+
+        $(".right-content").animate({ width: swidthpx }, function () {
+            $(".resume-container, .aboutme-container").hide();
+            $(".contact-container").show();
+        }).animate({ width: rcontw }, function () {
+            $(".right-content").animate({ width: 'auto' });
+        });
+    }
+
+    $(".circlediv").animate({ top: "58.1%" }, 600, function () {
+        isAnimating = false;
+    });
+
+    $("#contact").css("color", "#4e90cd");
+    $("#resume, #aboutme").css("color", "#d6d6d6");
+
+    resumesel = 0;
+    aboutmesel = 0;
+    contactsel = 1;
+});
+
+
+// ========================
+// HOVER STATES
+// ========================
+$("#resume").hover(
+    function () { $("#resume").css("color", "#4e90cd"); },
+    function () { $("#resume").css("color", resumesel ? "#4e90cd" : "#d6d6d6"); }
+);
+
+$("#aboutme").hover(
+    function () { $("#aboutme").css("color", "#4e90cd"); },
+    function () { $("#aboutme").css("color", aboutmesel ? "#4e90cd" : "#d6d6d6"); }
+);
+
+$("#contact").hover(
+    function () { $("#contact").css("color", "#4e90cd"); },
+    function () { $("#contact").css("color", contactsel ? "#4e90cd" : "#d6d6d6"); }
+);
+
+
+// ========================
+// SKILLS
+// ========================
+let skillsData = [];
+
+function loadSkills() {
+    if (skillsData.length > 0) {
+        renderSkills(skillsData);
+        return;
+    }
+
+    $.getJSON("skills.json", function (skills) {
+        skillsData = skills;
+        renderSkills(skillsData);
+    });
 }
 
-//VB.NET Percent
+function renderSkills(skills) {
 
-var vbcnt = 0;
-function vbPercent() {
-  if (vbcnt == 0) {
-    vbcnt = 1;
-    var percent = document.getElementById("vbPercent")
-    var elem = document.getElementById("vbBar");
-    var width = 1;
-    var id = setInterval(frame, 17);
-    function frame() {
-      if (width >= 90) {
-        clearInterval(id);
-        vbcnt = 0;
-      } else {
-        width++;
-        elem.style.width = width + "%";
-        percent.innerHTML = width * 1  + '%';
-      }
-    }
-  }
+    const container = $("#skillset");
+    container.empty();
+
+    skills.forEach(skill => {
+
+        const html = `
+            <div class="skill-container">
+                <div class="skill-text">
+                    <h4 class="skillTittle">
+                        ${skill.name}
+                        ${skill.sub ? `<span>${skill.sub}</span>` : ""}
+                    </h4>
+                    <h4 class="percentage">0%</h4>
+                </div>
+                <div class="barbackground">
+                    <div class="myBar"></div>
+                </div>
+            </div>
+        `;
+
+        const element = $(html);
+        container.append(element);
+
+        const bar = element.find(".myBar")[0];
+        const percentEl = element.find(".percentage")[0];
+
+        animateBar(bar, percentEl, skill.percent);
+    });
 }
 
-//ASP.NET Percent
+function animateBar(bar, percentEl, target) {
 
-var aspcnt = 0;
-function aspPercent() {
-  if (aspcnt == 0) {
-    aspcnt = 1;
-    var percent = document.getElementById("aspPercent")
-    var elem = document.getElementById("aspBar");
-    var width = 1;
-    var id = setInterval(frame, 17);
-    function frame() {
-      if (width >= 85) {
-        clearInterval(id);
-        aspcnt = 0;
-      } else {
-        width++;
-        elem.style.width = width + "%";
-        percent.innerHTML = width * 1  + '%';
-      }
-    }
-  }
+    let width = 0;
+
+    const id = setInterval(() => {
+        if (width >= target) {
+            clearInterval(id);
+        } else {
+            width++;
+            bar.style.width = width + "%";
+            percentEl.innerText = width + "%";
+        }
+    }, 17);
 }
-
-
-
-//HTML Percent
-
-var htmlcnt = 0;
-function HTMLPercent() {
-  if (htmlcnt == 0) {
-    htmlcnt = 1;
-    var percent = document.getElementById("htmlPercent")
-    var elem = document.getElementById("htmlBar");
-    var width = 1;
-    var id = setInterval(frame, 17);
-    function frame() {
-      if (width >= 95) {
-        clearInterval(id);
-        htmlcnt = 0;
-      } else {
-        width++;
-        elem.style.width = width + "%";
-        percent.innerHTML = width * 1  + '%';
-      }
-    }
-  }
-}
-
-// CSS Percent
-
-var csscnt = 0;
-function CSSPercent() {
-  if (csscnt == 0) {
-    csscnt = 1;
-    var percent = document.getElementById("cssPercent")
-    var elem = document.getElementById("cssBar");
-    var width = 1;
-    var id = setInterval(frame, 17);
-    function frame() {
-      if (width >= 90) {
-        clearInterval(id);
-        csscnt = 0;
-      } else {
-        width++;
-        elem.style.width = width + "%";
-        percent.innerHTML = width * 1  + '%';
-      }
-    }
-  }
-}
-
-//Javascript Percent
-
-var jscriptcnt = 0;
-function JscriptPercent() {
-  if (jscriptcnt == 0) {
-    jscriptcnt = 1;
-    var percent = document.getElementById("jscriptPercent")
-    var elem = document.getElementById("jscriptBar");
-    var width = 1;
-    var id = setInterval(frame, 17);
-    function frame() {
-      if (width >= 87) {
-        clearInterval(id);
-        jscriptcnt = 0;
-      } else {
-        width++;
-        elem.style.width = width + "%";
-        percent.innerHTML = width * 1  + '%';
-      }
-    }
-  }
-}
-
-//MSSQL Percent
-
-var mssqlcnt = 0;
-function mssqlPercent() {
-  if (mssqlcnt == 0) {
-    mssqlcnt = 1;
-    var percent = document.getElementById("mssqlPercent")
-    var elem = document.getElementById("mssqlBar");
-    var width = 1;
-    var id = setInterval(frame, 17);
-    function frame() {
-      if (width >= 88) {
-        clearInterval(id);
-        mssqlcnt = 0;
-      } else {
-        width++;
-        elem.style.width = width + "%";
-        percent.innerHTML = width * 1  + '%';
-      }
-    }
-  }
-}
-
-
-
-
-//PHP Percent
-
-var phpcnt = 0;
-function phpPercent() {
-  if (phpcnt == 0) {
-    phpcnt = 1;
-    var percent = document.getElementById("phpPercent")
-    var elem = document.getElementById("phpBar");
-    var width = 1;
-    var id = setInterval(frame, 17);
-    function frame() {
-      if (width >= 68) {
-        clearInterval(id);
-        phpcnt = 0;
-      } else {
-        width++;
-        elem.style.width = width + "%";
-        percent.innerHTML = width * 1  + '%';
-      }
-    }
-  }
-}
-
-
-//Photoshop Percent
-
-
-var photoscnt = 0;
-function photosPercent() {
-  if (photoscnt == 0) {
-    photoscnt = 1;
-    var percent = document.getElementById("photosPercent")
-    var elem = document.getElementById("photosBar");
-    var width = 1;
-    var id = setInterval(frame, 17);
-    function frame() {
-      if (width >= 97) {
-        clearInterval(id);
-        photoscnt = 0;
-      } else {
-        width++;
-        elem.style.width = width + "%";
-        percent.innerHTML = width * 1  + '%';
-      }
-    }
-  }
-}
-
-
-//Premiere Percent
-
-
-var premcnt = 0;
-function premPercent() {
-  if (premcnt == 0) {
-    premcnt = 1;
-    var percent = document.getElementById("premPercent")
-    var elem = document.getElementById("premBar");
-    var width = 1;
-    var id = setInterval(frame, 17);
-    function frame() {
-      if (width >= 87) {
-        clearInterval(id);
-        premcnt = 0;
-      } else {
-        width++;
-        elem.style.width = width + "%";
-        percent.innerHTML = width * 1  + '%';
-      }
-    }
-  }
-}
-
-

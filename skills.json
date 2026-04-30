@@ -1,0 +1,19 @@
+[
+  { "name": "C#", "sub": "(MVC, Web Application)", "percent": 95, "id": "cs" },
+  { "name": "VB.NET", "sub": "(Web Application, Windows Application)", "percent": 90, "id": "vb" },
+  { "name": "ASP.NET", "percent": 87, "id": "asp" },
+  { "name": "RESTful API", "sub": "(Web API)", "percent": 85, "id": "api" },
+  { "name": "Blazor / Razor", "percent": 87, "id": "br" },
+  { "name": "PHP", "percent": 70, "id": "php" },
+  { "name": "HTML", "percent": 95, "id": "html" },
+  { "name": "CSS", "sub": "(Bootstrap)", "percent": 90, "id": "css" },
+  { "name": "JavaScript", "sub": "(jQuery, AJAX)", "percent": 90, "id": "js" },
+  { "name": "SQL", "sub": "(MSSQL, MySQL)", "percent": 88, "id": "sql" },
+  { "name": "LINQ / Entity Framework", "percent": 80, "id": "le" },
+  { "name": "JSON / Data Serialization", "percent": 80, "id": "json" },
+  { "name": "Authentication", "sub" : "(JWT, Session)","percent": 78, "id": "jwt" },
+  { "name": "GIT / GitHub", "percent": 85, "id": "git" },
+  { "name": "Error Handling & Debugging", "percent": 85, "id": "err" },
+  { "name": "Adobe Photoshop", "percent": 97, "id": "photos" },
+  { "name": "Adobe Premiere", "percent": 87, "id": "prem" }
+]
